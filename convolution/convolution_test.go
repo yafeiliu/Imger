@@ -28,7 +28,7 @@ func Test_ConvolveGray_0Kernel(t *testing.T) {
 		{0, 0, 0},
 		{0, 0, 0},
 	}, 3, 3}
-	conv, _ := ConvolveGray(&gray, &kernel, image.Point{X: 1, Y: 1}, padding.BorderConstant)
+	conv, _, _ := ConvolveGray(&gray, &kernel, image.Point{X: 1, Y: 1}, padding.BorderConstant)
 	size := conv.Bounds().Size()
 	utils.ForEachPixel(size, func(x, y int) {
 		pExp := expected.GrayAt(x, y).Y
@@ -62,7 +62,7 @@ func Test_ConvolveGray_1Kernel(t *testing.T) {
 		{0, 1, 0},
 		{0, 0, 0},
 	}, 3, 3}
-	conv, _ := ConvolveGray(&gray, &kernel, image.Point{X: 1, Y: 1}, padding.BorderConstant)
+	conv, _, _ := ConvolveGray(&gray, &kernel, image.Point{X: 1, Y: 1}, padding.BorderConstant)
 	size := conv.Bounds().Size()
 	utils.ForEachPixel(size, func(x, y int) {
 		pExp := expected.GrayAt(x, y).Y
@@ -98,7 +98,7 @@ func Test_ConvoleGray_11Kernel(t *testing.T) {
 		{0, 1, 1},
 		{0, 0, 0},
 	}, 3, 3}
-	conv, _ := ConvolveGray(&gray, &kernel, image.Point{X: 1, Y: 1}, padding.BorderConstant)
+	conv, _, _ := ConvolveGray(&gray, &kernel, image.Point{X: 1, Y: 1}, padding.BorderConstant)
 	size := conv.Bounds().Size()
 	utils.ForEachPixel(size, func(x, y int) {
 		pExp := expected.GrayAt(x, y)
