@@ -1,3 +1,3 @@
-module github.com/ernyoke/imger
+module github.com/yafeiliu/imger
 
 go 1.18

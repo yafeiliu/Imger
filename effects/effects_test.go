@@ -1,8 +1,8 @@
 package effects
 
 import (
-	"github.com/ernyoke/imger/imgio"
-	"github.com/ernyoke/imger/utils"
+	"github.com/yafeiliu/imger/imgio"
+	"github.com/yafeiliu/imger/utils"
 	"image"
 	"testing"
 )

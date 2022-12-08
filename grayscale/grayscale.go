@@ -1,7 +1,7 @@
 package grayscale
 
 import (
-	"github.com/ernyoke/imger/utils"
+	"github.com/yafeiliu/imger/utils"
 	"image"
 	"image/color"
 )

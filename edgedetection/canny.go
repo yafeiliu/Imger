@@ -2,10 +2,10 @@ package edgedetection
 
 import (
 	"errors"
-	"github.com/ernyoke/imger/blur"
-	"github.com/ernyoke/imger/grayscale"
-	"github.com/ernyoke/imger/padding"
-	"github.com/ernyoke/imger/utils"
+	"github.com/yafeiliu/imger/blur"
+	"github.com/yafeiliu/imger/grayscale"
+	"github.com/yafeiliu/imger/padding"
+	"github.com/yafeiliu/imger/utils"
 	"image"
 	"image/color"
 	"math"

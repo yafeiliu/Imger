@@ -1,7 +1,7 @@
 package resize
 
 import (
-	"github.com/ernyoke/imger/imgio"
+	"github.com/yafeiliu/imger/imgio"
 	"image"
 	"testing"
 )

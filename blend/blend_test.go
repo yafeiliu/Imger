@@ -1,7 +1,7 @@
 package blend
 
 import (
-	"github.com/ernyoke/imger/utils"
+	"github.com/yafeiliu/imger/utils"
 	"image"
 	"testing"
 )
