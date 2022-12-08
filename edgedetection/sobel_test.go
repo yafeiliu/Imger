@@ -36,13 +36,13 @@ func tearDownTestCaseSobel(t *testing.T, img image.Image, path string) {
 
 func Test_Acceptance_HorizontalSobelGray(t *testing.T) {
 	gray := setupTestCaseGraySobel(t)
-	sobel, _ := HorizontalSobelGray(gray, padding.BorderReflect)
+	sobel, _, _ := HorizontalSobelGray(gray, padding.BorderReflect)
 	tearDownTestCaseSobel(t, sobel, "../res/edge/horizontalSobelGray.png")
 }
 
 func Test_Acceptance_VerticalSobelGray(t *testing.T) {
 	gray := setupTestCaseGraySobel(t)
-	sobel, _ := VerticalSobelGray(gray, padding.BorderReflect)
+	sobel, _, _ := VerticalSobelGray(gray, padding.BorderReflect)
 	tearDownTestCaseSobel(t, sobel, "../res/edge/verticalSobelGray.png")
 }
 
@@ -54,13 +54,13 @@ func Test_Acceptance_SobelGray(t *testing.T) {
 
 func Test_Acceptance_HorizontalSobelRGBA(t *testing.T) {
 	rgba := setupTestCaseRGBASobel(t)
-	sobel, _ := HorizontalSobelRGBA(rgba, padding.BorderReflect)
+	sobel, _, _ := HorizontalSobelRGBA(rgba, padding.BorderReflect)
 	tearDownTestCaseSobel(t, sobel, "../res/edge/horizontalSobelRGBA.png")
 }
 
 func Test_Acceptance_VerticalSobelRGBA(t *testing.T) {
 	rgba := setupTestCaseRGBASobel(t)
-	sobel, _ := VerticalSobelRGBA(rgba, padding.BorderReflect)
+	sobel, _, _ := VerticalSobelRGBA(rgba, padding.BorderReflect)
 	tearDownTestCaseSobel(t, sobel, "../res/edge/verticalSobelRGBA.png")
 }
 

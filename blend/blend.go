@@ -11,8 +11,7 @@ import (
 // overflows uint8, the result will be clamped to max uint8 (255).
 // Example of usage:
 //
-//		 res := blend.AddScalarToGray(img, 56)
-//
+//	res := blend.AddScalarToGray(img, 56)
 func AddScalarToGray(img *image.Gray, value int) *image.Gray {
 	res := image.NewGray(img.Rect)
 	utils.ParallelForEachPixel(img.Bounds().Size(), func(x, y int) {
@@ -27,8 +26,7 @@ func AddScalarToGray(img *image.Gray, value int) *image.Gray {
 // the result will be clamped to max uint8 (255).
 // Example of usage:
 //
-//		 res, err := blend.AddGray(gray1, gray2)
-//
+//	res, err := blend.AddGray(gray1, gray2)
 func AddGray(img1 *image.Gray, img2 *image.Gray) (*image.Gray, error) {
 	size1 := img1.Bounds().Size()
 	size2 := img2.Bounds().Size()
@@ -51,8 +49,7 @@ func AddGray(img1 *image.Gray, img2 *image.Gray) (*image.Gray, error) {
 // If the result for a given position is negative, then it will be clamped to 0.
 // Example of usage:
 //
-//		 res, err := blend.AddGrayWeighted(gray1, 0.25, gray2, 0.75)
-//
+//	res, err := blend.AddGrayWeighted(gray1, 0.25, gray2, 0.75)
 func AddGrayWeighted(img1 *image.Gray, w1 float64, img2 *image.Gray, w2 float64) (*image.Gray, error) {
 	size1 := img1.Bounds().Size()
 	size2 := img2.Bounds().Size()

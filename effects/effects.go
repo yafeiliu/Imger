@@ -22,8 +22,7 @@ var sharpenKernel = convolution.Kernel{Content: [][]float64{
 // enlarged.
 // Example of usage:
 //
-//		 res, err := effects.PixelateGray(img, 5.0)
-//
+//	res, err := effects.PixelateGray(img, 5.0)
 func PixelateGray(img *image.Gray, factor float64) (*image.Gray, error) {
 	if factor < 1.0 {
 		return nil, errors.New("invalid factor, should be greater then 1.0")
@@ -43,8 +42,7 @@ func PixelateGray(img *image.Gray, factor float64) (*image.Gray, error) {
 // PixelateRGBA enlarges the pixels of a RGBA image. The factor value specifies how much should be the pixels enlarged.
 // Example of usage:
 //
-//		 res, err := effects.PixelateRGBA(img, 5.0)
-//
+//	res, err := effects.PixelateRGBA(img, 5.0)
 func PixelateRGBA(img *image.RGBA, factor float64) (*image.RGBA, error) {
 	if factor < 1.0 {
 		return nil, errors.New("invalid factor, should be greater then 1.0")

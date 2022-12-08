@@ -107,7 +107,7 @@ func DrawHistogramRGBA(img *image.RGBA, size image.Point) *image.RGBA {
 	return res
 }
 
-//---------------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------------
 func drawerFunc(size image.Point, getNormAt func(i int) uint64, setPixel func(x, y int)) {
 	scaleX := float64(size.X) / float64(hsize)
 	for i := 0; i < hsize; i++ {

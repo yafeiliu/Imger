@@ -16,17 +16,17 @@ import (
 func CannyGray(img *image.Gray, lower float64, upper float64, kernelSize uint) (*image.Gray, error) {
 
 	// blur the image using Gaussian filter
-	blurred, err := blur.GaussianBlurGray(img, float64(kernelSize), 1, padding.BorderConstant)
+	blurred, _, err := blur.GaussianBlurGray(img, float64(kernelSize), 1, padding.BorderConstant)
 	if err != nil {
 		return nil, err
 	}
 
 	// get vertical and horizontal edges using Sobel filter
-	vertical, err := VerticalSobelGray(blurred, padding.BorderConstant)
+	vertical, _, err := VerticalSobelGray(blurred, padding.BorderConstant)
 	if err != nil {
 		return nil, err
 	}
-	horizontal, err := HorizontalSobelGray(blurred, padding.BorderConstant)
+	horizontal, _, err := HorizontalSobelGray(blurred, padding.BorderConstant)
 	if err != nil {
 		return nil, err
 	}

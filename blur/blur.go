@@ -12,7 +12,7 @@ import (
 // both width and height can be specified. The anchor point specifies a point inside the kernel. The pixel value
 // will be updated after the convolution was done for the given area.
 // Border types supported: see convolution package.
-func BoxGray(img *image.Gray, kernelSize image.Point, anchor image.Point, border padding.Border) (*image.Gray, error) {
+func BoxGray(img *image.Gray, kernelSize image.Point, anchor image.Point, border padding.Border) (*image.Gray, float64, error) {
 	kernel := generateBoxKernel(&kernelSize)
 	return convolution.ConvolveGray(img, kernel.Normalize(), anchor, border)
 }
@@ -29,9 +29,9 @@ func BoxRGBA(img *image.RGBA, kernelSize image.Point, anchor image.Point, border
 // GaussianBlurGray applies average blur to a grayscale image. The amount of bluring effect depends on the kernel radius
 // and sigma value. The anchor point specifies a point inside the kernel. The pixel value  will be updated after the
 // convolution was done for the given area. For border types see convolution package.
-func GaussianBlurGray(img *image.Gray, radius float64, sigma float64, border padding.Border) (*image.Gray, error) {
+func GaussianBlurGray(img *image.Gray, radius float64, sigma float64, border padding.Border) (*image.Gray, float64, error) {
 	if radius <= 0 {
-		return nil, errors.New("radius must be bigger then 0")
+		return nil, 0, errors.New("radius must be bigger then 0")
 	}
 	return convolution.ConvolveGray(img, generateGaussianKernel(radius, sigma).Normalize(), image.Point{X: int(math.Ceil(radius)), Y: int(math.Ceil(radius))}, border)
 }

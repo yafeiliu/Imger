@@ -39,9 +39,8 @@ const (
 // LaplacianGray applies Laplacian filter to a grayscale image. The kernel types are: K4 and K8 (see LaplacianKernel)
 // Example of usage:
 //
-//		 res, err := edgedetection.LaplacianGray(img, paddding.BorderReflect, edgedetection.K8)
-//
-func LaplacianGray(gray *image.Gray, border padding.Border, kernel LaplacianKernel) (*image.Gray, error) {
+//	res, err := edgedetection.LaplacianGray(img, paddding.BorderReflect, edgedetection.K8)
+func LaplacianGray(gray *image.Gray, border padding.Border, kernel LaplacianKernel) (*image.Gray, float64, error) {
 	var laplacianKernel convolution.Kernel
 	switch kernel {
 	case K4:
@@ -49,7 +48,7 @@ func LaplacianGray(gray *image.Gray, border padding.Border, kernel LaplacianKern
 	case K8:
 		laplacianKernel = kernel8
 	default:
-		return nil, errors.New("invalid kernel")
+		return nil, 0, errors.New("invalid kernel")
 	}
 	return convolution.ConvolveGray(gray, &laplacianKernel, image.Point{X: 1, Y: 1}, border)
 }
@@ -57,9 +56,8 @@ func LaplacianGray(gray *image.Gray, border padding.Border, kernel LaplacianKern
 // LaplacianRGBA applies Laplacian filter to an RGBA image. The kernel types are: K4 and K8 (see LaplacianKernel)
 // Example of usage:
 //
-//		 res, err := edgedetection.LaplacianRGBA(img, paddding.BorderReflect, edgedetection.K8)
-//
-func LaplacianRGBA(img *image.RGBA, border padding.Border, kernel LaplacianKernel) (*image.Gray, error) {
+//	res, err := edgedetection.LaplacianRGBA(img, paddding.BorderReflect, edgedetection.K8)
+func LaplacianRGBA(img *image.RGBA, border padding.Border, kernel LaplacianKernel) (*image.Gray, float64, error) {
 	gray := grayscale.Grayscale(img)
 	return LaplacianGray(gray, border, kernel)
 }

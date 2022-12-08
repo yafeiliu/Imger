@@ -276,8 +276,7 @@ func resizeVerticalRGBA(img *image.RGBA, fy float64, filter Filter) (*image.RGBA
 // currently the following methods are supported: InterNearest, InterLinear, InterCatmullRom, InterLanczos.
 // Example of usage:
 //
-//		res, err := resize.ResizeGray(img, 2.5, 3.5, resize.InterLinear)
-//
+//	res, err := resize.ResizeGray(img, 2.5, 3.5, resize.InterLinear)
 func ResizeGray(img *image.Gray, fx float64, fy float64, interpolation Interpolation) (*image.Gray, error) {
 	if fx < 0 || fy < 0 {
 		return nil, errors.New("scale value should be greater then 0")
@@ -301,8 +300,7 @@ func ResizeGray(img *image.Gray, fx float64, fy float64, interpolation Interpola
 // currently the following methods are supported: InterNearest, InterLinear, InterCatmullRom, InterLanczos.
 // Example of usage:
 //
-//		res, err := resize.ResizeRGBA(img, 2.5, 3.5, resize.InterLinear)
-//
+//	res, err := resize.ResizeRGBA(img, 2.5, 3.5, resize.InterLinear)
 func ResizeRGBA(img *image.RGBA, fx float64, fy float64, interpolation Interpolation) (*image.RGBA, error) {
 	if fx < 0 || fy < 0 {
 		return nil, errors.New("scale value should be greater then 0")
